@@ -1,17 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="NullishingOperator.js"></script>
-        <title>Document</title>
-        <link href="./site/main.css" rel="stylesheet">
-    </head>
-    <body>
-        <main>
-            <div>
-            <h1 class="bg-red-500">The nullish coalescing operator is written as two question marks ??.</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="NullishingOperator.js"></script>
+    <title>Document</title>
+    <link href="./site/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1 class="bg-red-500 text-4xl font-bold m-10">
+          The nullish coalescing operator is written as two question marks ??.
+        </h1>
+        <p class="text-xl ml-10">
+          For example, here we show user if its value isn’t null/undefined,
+          otherwise Anonymous:
+        </p>
+        <div class="border-2 h-fit w-1/2 bg-black/40 m-10">
+          <p class="border-2 m-5 h-fit w-64">let user;</p>
+          <p class="border-2 m-5 h-fit w-auto">
+            alert(user ?? "Anonymous"); // Anonymous (user is undefined)
+          </p>
         </div>
-        </main>
-    </body>
+        <p class="text-xl ml-10">
+          Here’s the example with user assigned to a name:
+        </p>
+        <div class="border-2 h-fit w-1/2 bg-black/40 m-10">
+            <p class="border-2 m-5 h-fit w-64">let user = "John";</p>
+            <p class="border-2 m-5 h-fit w-auto">
+                alert(user ?? "Anonymous"); // John (user is not null/undefined)
+            </p>
+      </div>
+      <div>
+        <div>
+            <h1>Comparison with ||</h1>
+        <p>The OR || operator can be used in the same way as ??, as it was described in the previous chapter.
+
+            For example, in the code above we could replace ?? with || and still get the same result:</p>
+        </div>
+        <div class="flex flex-col">
+            <p>let firstName = null;</p>
+            <p>let lastName = null;</p>
+            <p>let nickName = "Supercoder";</p>
+        </div>
+        <div class="border-2 ">
+            <p>alert(firstName || lastName || nickName || "Anonymous"); // Supercoder</p>
+        </div>
+    </div>
+    
+    </main>
+  </body>
 </html>
