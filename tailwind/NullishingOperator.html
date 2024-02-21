@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="NullishingOperator.js"></script>
     <title>Document</title>
-    <link href="./main.css" rel="stylesheet" />
+    <link href="./site/main.css" rel="stylesheet" />
   </head>
   <body>
     <main>
@@ -14,7 +14,7 @@
           The nullish coalescing operator is written as two question marks ??.
         </h1>
         <p class="text-xl ml-10">
-          For example, here we show user if its value isn’t null/undefined,
+          For example, here we show user if its value isnt null/undefined,
           otherwise Anonymous:
         </p>
         <div class="border-2 h-fit w-1/2 bg-black/40 m-10">
@@ -24,32 +24,59 @@
           </p>
         </div>
         <p class="text-xl ml-10">
-          Here’s the example with user assigned to a name:
+          Heres the example with user assigned to a name:
         </p>
         <div class="border-2 h-fit w-1/2 bg-black/40 m-10">
-            <p class="border-2 m-5 h-fit w-64">let user = "John";</p>
-            <p class="border-2 m-5 h-fit w-auto">
-                alert(user ?? "Anonymous"); // John (user is not null/undefined)
-            </p>
+          <p class="border-2 m-5 h-fit w-64">let user = "John";</p>
+          <p class="border-2 m-5 h-fit w-auto">
+            alert(user ?? "Anonymous"); // John (user is not null/undefined)
+          </p>
+        </div>
       </div>
       <div>
+        <div class="m-5 h-fit w-auto">
+          <h1>Comparison with ||</h1>
+          <p>
+            The OR || operator can be used in the same way as ??, as it was
+            described in the previous chapter. For example, in the code above we
+            could replace ?? with || and still get the same result:
+          </p>
+        </div>
+      </div>
+      <div class="border-2 m-5 h-fit w-1/2 flex flex-col">
         <div>
-            <h1>Comparison with ||</h1>
-            <p>The OR || operator can be used in the same way as ??, as it was described in the previous chapter. 
-             For example, in the code above we could replace ?? with || and still get the same result:</p>
+          <p>let firstName = null;</p>
+          <p>let lastName = null;</p>
+          <p>let nickName = "Supercoder";</p>
         </div>
-    <div>
-        <div class="flex flex-col">
-            <p>let firstName = null;</p>
-            <p>let lastName = null;</p>
-            <p>let nickName = "Supercoder";</p>
+        <div>
+          <!-- // shows the first truthy value: -->
+          <p>
+            alert(firstName || lastName || nickName || "Anonymous"); //
+            Supercoder
+          </p>
         </div>
-        <div class="border-2 ">
-            <p>alert(firstName || lastName || nickName || "Anonymous"); // Supercoder</p>
+      </div>
+      <div>
+        <div class="border-2 m-5 h-fit w-1/2">
+          <div class="flex flex-col font-semibold">
+            <p>The important difference between them is:</p>
+            <p>- || returns the first truthy value.</p>
+            <p>- ?? returns the first defined value.</p>
+          </div>
         </div>
-    </div>
-    </div>
-    
+        <p class="m-5 h-fit w-auto">
+          In other words, || doesn’t distinguish between false, 0, an empty
+          string "" and null/undefined. They are all the same – falsy values. If
+          any of these is the first argument of ||, then we’ll get the second
+          argument as the result.
+        </p>
+      </div>
+      <div class="border-2 m-5 h-fit w-1/2">
+        <p>let height = 0;</p>
+        <p>alert(height || 100); <span class="kom">// 100</span></p>
+        <p>alert(height ?? 100); <span class="kom">// 0</span></p>
+      </div>
     </main>
   </body>
 </html>

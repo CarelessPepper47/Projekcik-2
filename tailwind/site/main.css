@@ -20,6 +20,10 @@
   /* 2 */
 }
 
+.kom {
+  color:green;
+}
+
 ::before,
 ::after {
   --tw-content: '';
